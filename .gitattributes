@@ -1,0 +1,5 @@
+# 仓库内统一使用 LF，避免各平台贡献时产生换行符噪声。
+* text=auto eol=lf
+
+# 二进制资源不做换行转换。
+public/favicon.ico binary

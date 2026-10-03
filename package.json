@@ -1,0 +1,28 @@
+{
+  "name": "cialloo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "cialloo.cc 互动问候小站",
+  "license": "MIT",
+  "homepage": "https://cialloo.cc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirofumo/cialloo.git"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "durable-objects",
+    "workers-assets",
+    "typescript"
+  ],
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf:types": "wrangler types",
+    "typecheck": "wrangler types && tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "wrangler": "^4.147.0"
+  }
+}
