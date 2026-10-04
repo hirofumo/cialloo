@@ -117,11 +117,15 @@ npm run deploy
 | Git repository | `hirofumo/cialloo` |
 | Git branch | `main` |
 | Build command | `npm ci` |
-| Deploy command | `npm run deploy` |
+| Deploy command | `npx wrangler deploy` |
 | Root directory | 留空 |
 | API token | 留默认，Cloudflare 会自动生成 |
 
 项目没有打包步骤，`npm ci` 只是把 `package.json` 里锁定的 wrangler 装进来。
+
+部署命令要写完整的 `npx wrangler deploy`，这也是 Workers Builds 的默认值。填
+`npm run deploy` 会被按包管理器改写成 `npx run deploy`，npx 找不到名为 `run` 的可执行
+文件，构建在最后一步失败。
 
 该 Worker 使用 Durable Objects，而 Cloudflare 不为实现了 Durable Objects 的 Worker 生成
 Version URL，因此未开启非主干分支的预览构建。
