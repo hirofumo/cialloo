@@ -96,6 +96,29 @@ npm run deploy      # 部署到 Cloudflare
 
 本地计数器与线上相互独立，本地计数从 0 开始。
 
+## 部署
+
+```bash
+npm run deploy
+```
+
+推送到主干分支也会触发部署：仓库接入 Cloudflare Workers Builds，配置位于 Worker 的
+**Settings → Build**。
+
+| 配置项 | 值 |
+| --- | --- |
+| Git repository | `hirofumo/cialloo` |
+| Git branch | `main` |
+| Build command | `npm ci` |
+| Deploy command | `npm run deploy` |
+| Root directory | 留空 |
+| API token | 留默认，Cloudflare 会自动生成 |
+
+项目没有打包步骤，`npm ci` 只是把 `package.json` 里锁定的 wrangler 装进来。
+
+该 Worker 使用 Durable Objects，而 Cloudflare 不为实现了 Durable Objects 的 Worker 生成
+Version URL，因此未开启非主干分支的预览构建。
+
 ## License
 
 [MIT](LICENSE)
