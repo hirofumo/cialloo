@@ -26,6 +26,12 @@ ES module 直接出图。
 | 工具链 | wrangler 4、TypeScript 5 |
 | 域名 | cialloo.cc（zone 内 Worker 路由） |
 
+## 浏览器支持
+
+站点使用原生 ES module、CSS `clamp()` 与 `backdrop-filter`，面向现代浏览器：
+Chrome / Edge 111+、Firefox 128+、Safari 16.4+。更旧的浏览器仍会渲染页面 HTML，
+但没有诗库与计数交互。
+
 ## 项目结构
 
 | 路径 | 说明 |
@@ -85,6 +91,7 @@ npm install
 
 npm run dev         # 本地开发，默认 http://localhost:8787
 npm run typecheck   # 生成绑定类型并做类型检查
+npm run cf:types    # 只生成绑定类型
 npm run deploy      # 部署到 Cloudflare
 ```
 
